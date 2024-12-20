@@ -22,7 +22,7 @@ const parametersByLocation = getParametersByLocation(operation.parameters, pathI
     <>
       <h2 id="parameters">Parameters</h2>
       {[...parametersByLocation.entries()].map(([location, parameters]) => (
-        <Section title={`${capitalize(location)} Parameters`}>
+        <Section title={`${(location === null) ? capitalize(location) + ' Parameters' : ''}`}>
           {[...parameters.values()].map((parameter) => (
             <Parameter {parameter} />
           ))}

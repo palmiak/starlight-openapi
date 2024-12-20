@@ -25,7 +25,7 @@ function getExampleValue(value: unknown): string {
       return value.toString()
     }
     default: {
-      return JSON.stringify(value, null, 2)
+      return JSON.stringify(value, null, 2).replace(/\\/g, "")
     }
   }
 }
